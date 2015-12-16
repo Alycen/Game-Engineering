@@ -10,7 +10,6 @@ class MyContactListener : public b2ContactListener {
 private:
 
 public:
-
 	MyContactListener() : b2ContactListener() {
 	}
 
