@@ -1,6 +1,7 @@
 #include "Obstacle.h"
 #include "Renderer.h"
 #include <SDL_image.h>
+#include "ThreadingMutex.h"
 
 static const float SCALE = 30.f;
 
@@ -8,6 +9,28 @@ Obstacle::Obstacle()
 {
 }
 
+int AnimationProcess(void *data) {
+	while (static_cast<Obstacle*>(data)->destroyed==false) {
+		if (SDL_LockMutex (mtx) != 0) {
+			std::cout << "Queued / Waiting" << std::endl;
+		}
+		else {
+			std::cout << "Locked (Critical Section). Thread :" << std::endl << (int)SDL_ThreadID() << std::endl;
+			static_cast<Obstacle*>(data)->AnimationFrames();
+
+			if (SDL_UnlockMutex(mtx) != 0) {
+				std::cout << "Nothing in Queue" << std::endl;
+			}
+			std::cout << "Unlocked" << std::endl;
+			SDL_Delay(100);
+		}
+	}
+	return 0;
+}
+
+void Obstacle::CreateThread() {
+
+}
 
 void Obstacle::Animate()
 {

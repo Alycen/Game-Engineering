@@ -32,7 +32,6 @@ public:
 	int GetScore();
 
 	bool respawnPlayer;
-
 private:
 	int health;
 	SDL_Rect initPos;

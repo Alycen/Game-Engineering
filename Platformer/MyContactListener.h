@@ -6,6 +6,7 @@
 #include "Obstacle.h"
 #include "Level.h"
 
+
 class MyContactListener : public b2ContactListener {
 private:
 
