@@ -25,6 +25,8 @@ public:
 	int frame;
 	void Animate();
 	void AnimationFrames();
+
+	void CreateThread();
 private:
 	b2BodyDef myBodyDef;
 	b2FixtureDef myBodyFixtureDef;
@@ -33,6 +35,8 @@ private:
 	SDL_Texture* myTexture;
 	SDL_Rect myRect;
 	void * myName;
+
+	SDL_Thread* AnimationThread;
 };
 
 #endif#pragma once

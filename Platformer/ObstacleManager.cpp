@@ -83,7 +83,13 @@ ObstacleManager * ObstacleManager::GetInstance()
 
 void ObstacleManager::addObstacle(SDL_Rect pRect, b2World * world, string path, void * name)
 {
-	obstacles.push_back(new Obstacle(pRect, world, path, name));
+	if (name == "coin") {
+		Obstacle* temp = new Obstacle(pRect, world, path, name);
+		temp->CreateThread();
+		obstacles.push_back(temp);
+	}
+	else
+		obstacles.push_back(new Obstacle(pRect, world, path, name));
 }
 void ObstacleManager::addfloor(SDL_Rect pRect, string path)
 {

@@ -16,7 +16,7 @@ int AnimationProcess(void *data) {
 		}
 		else {
 			std::cout << "Locked (Critical Section). Thread :" << std::endl << (int)SDL_ThreadID() << std::endl;
-			static_cast<Obstacle*>(data)->AnimationFrames();
+			static_cast<Obstacle*>(data)->Animate();
 
 			if (SDL_UnlockMutex(mtx) != 0) {
 				std::cout << "Nothing in Queue" << std::endl;
@@ -29,7 +29,7 @@ int AnimationProcess(void *data) {
 }
 
 void Obstacle::CreateThread() {
-
+	AnimationThread = SDL_CreateThread(AnimationProcess, "Animation Thread", (void*)this);
 }
 
 void Obstacle::Animate()

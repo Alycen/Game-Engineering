@@ -15,6 +15,7 @@
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Pot.cpp" />
+    <ClCompile Include="ThreadingMutex.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Hackathon\GMIT_Hackaton_Team2\GMIT_Hackaton_Team2\targetver.h" />
@@ -33,6 +34,7 @@
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Pot.h" />
+    <ClInclude Include="ThreadingMutex.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="lib\Box2D.lib" />

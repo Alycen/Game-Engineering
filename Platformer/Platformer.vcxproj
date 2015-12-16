@@ -170,6 +170,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="ThreadingMutex.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Hackathon\GMIT_Hackaton_Team2\GMIT_Hackaton_Team2\targetver.h" />
@@ -188,6 +189,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="ThreadingMutex.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
